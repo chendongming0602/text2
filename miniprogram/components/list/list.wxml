@@ -1,0 +1,58 @@
+ <!-- <view class="tab1Title">
+    <image  src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/text/new/cloudLeft.png"></image>
+    <text class="newContent">{{name}}</text>
+    <image  src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/text/new/cloudRight.png"></image>
+</view>
+
+<view class="ListBox1">
+  <block wx:for="{{list}}" wx:key="{{index}}">
+    <view catchtap="goDetail" class="item1"  data-id="{{item.id}}">
+      <image mode="aspectFill" class="itemImg" src="{{item.more.thumbnail}}"></image>
+      <view class="item1Text">{{item.post_title}}</view>
+    </view>
+    <view class="advertising1" wx:if="{{index===1}}">我是个广告</view>
+  </block>
+  <view class="empty1" wx:if="{{isEmpty&&!isEmptyList}}">
+    暂无更多图文～
+  </view>
+</view> -->
+
+<view class="list">
+  <block wx:for="{{8}}" wx:key="{{index}}">
+    <!-- 最新的标题 -->
+    <view wx:if="{{listClass===0}}">
+      <view class="listTitle"  wx:if="{{index==0}}">
+        <image  src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/text2/index/itemLeft.png"></image>
+        <view class="listText">
+          <view class="listTime1">十月初十</view>
+          <view class="listTime2">2019年10月4日</view>
+        </view>
+        <image  src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/text2/index/itemRight.png"></image>
+      </view>
+    </view>
+    <view wx:if="{{listClass===1}}">
+      <!-- 热门标题 -->
+      <view class="listTitle listTitle2" wx:if="{{index==0}}">
+        <image  src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/text2/index/itemLeft.png"></image>
+        <view class="listText listText2">
+          热门推荐
+        </view>
+        <image  src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/text2/index/itemRight.png"></image>
+      </view>
+    </view>
+    <!-- 列表 -->
+    <view class="listItem" style="background:url('https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/text2/index/listBg.png') no-repeat center/cover">
+
+      <view class="picBox">
+        <view class="pic" style="background:url('http://minis-resources-1252149780.cosgz.myqcloud.com/lovers_magpie%20/logo.jpg') no-repeat center/cover">
+        </view>
+        <image class="picBg "  src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/text2/index/listPic2.png">
+        </image>
+      </view>
+      <view class="itemText">感恩节，感恩一路有你这个逗比</view>
+    </view>
+  </block>
+  <view class="empty1" wx:if="{{isEmpty&&!isEmptyList}}">
+  暂无更多图文～
+  </view>
+</view>
