@@ -1,22 +1,25 @@
 <import src="/utils/wxParse/wxParse.wxml" />
 
 <view class="detailsBox" style="background: url({{list.more.beackimg?list.more.beackimg:'https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/text/details/bg2.png'}}) center/contain;" hidden="{{!isList}}">
-  <view class="advertising" wx:if="{{adShow}}">
+  <!-- <view class="advertising" wx:if="{{adShow}}">
     我是个广告
-  </view>
+  </view> -->
   <!-- 头部 -->
   <view class="detailTop">
+    <view class="topText">感恩节，感谢一路有你相随，快 打开看看吧！</view>
     <view class="picBox">
       <view class="pic">
         <open-data type="userAvatarUrl"></open-data>
       </view>
-      <image class="picBg picBgA"  src="{{list.more.headimg?list.more.headimg:'https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/text/details/picBg.png'}}">
+      <!-- list.more.headimg?list.more.headimg: -->
+      <image class="picBg picBgA"  src="{{'https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/text2/index/topPic.png'}}">
       </image>
     </view>
 
     <view class="userName">
       亲爱的“<open-data type="userNickName" class="profileName"></open-data>”
     </view>
+    <view class="well">上午好</view>
     <view class="benediction">{{list.post_title}}</view>
     <!-- <view class="benediction">{{list.post_title}}</view>
     <view class="benediction">{{list.post_title}}</view> -->
@@ -31,8 +34,19 @@
   </view> -->
   <!-- 自己 -->
   <rich-text nodes="{{content}}" space="nbsp"></rich-text>
+
+  <view class="picBox">
+    <view class="pic">
+      <open-data type="userAvatarUrl"></open-data>
+    </view>
+    <!-- list.more.headimg?list.more.headimg: -->
+    <image class="picBg picBgA"  src="{{'https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/text2/index/topPic.png'}}">
+    </image>
+  </view> 
+  <view class="bonText bonTextTop">“蜜囍美文”向你问好</view>
+  <view class="bonText">把这篇文章送给朋友们看看吧</view>
   <!-- 底部 -->
-  <view class="detailTop">
+  <!-- <view class="detailTop">
     <view class="picBox">
       <view class="pic">
         <open-data type="userAvatarUrl"></open-data>
@@ -44,28 +58,32 @@
     <view class="flowerBox">
       <image class="flower" src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/text/details/flower.png"></image>
     </view>
-  </view>
-  <view class="advertising" wx:if="{{adShow}}">
+  </view> -->
+
+  <!-- <view class="advertising" wx:if="{{adShow}}">
     我是个广告
-  </view>
+  </view> -->
+
   <!-- 推荐 -->
-  <recommend list="{{listArr}}"></recommend>
-  <view class="flowerBox">
+  <!-- <recommend list="{{listArr}}"></recommend> -->
+  <!-- <view class="flowerBox">
     <image class="flower" src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/text/details/flower.png"></image>
-  </view>
-  <view class="advertising" wx:if="{{adShow}}">
+  </view> -->
+
+  <!-- <view class="advertising" wx:if="{{adShow}}">
     我是个广告
-  </view>
-  <navigator open-type="navigateBack" class="goIndex" url="/pages/index/index" hover-class="none">
+  </view> -->
+
+  <!-- <navigator open-type="navigateBack" class="goIndex" url="/pages/index/index" hover-class="none">
     <image class="homePic" src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/text/details/homePic.png"></image>
     返回首页
-  </navigator>
+  </navigator> -->
 
-  <view class="flock rewardA">
+  <!-- <view class="flock rewardA">
     <button open-type="contact" hover-class="none">
       群
     </button>
-  </view>
+  </view> -->
 
   <view class="shareBtn">
     <view>

@@ -4,7 +4,7 @@
   width: 100vw;
   min-height: 100vh;
   padding: 30rpx;
-  padding-bottom: 340rpx;
+  padding-bottom: 230rpx;
   position: relative;
 }
 .advertising{
@@ -23,13 +23,31 @@
 .music2{
   top: 50rpx;
 }
+.topText{
+  width: 100%;
+  font-size: 48rpx;
+  font-weight: bold;
+  color: #0000FF;
+  padding-bottom: 18rpx;
+  border-bottom: 2rpx solid #9B9B9B;
+  text-align: left;
+}
 .detailTop{
   margin-top: 20rpx;
   text-align: center;
 }
+
+.picBox{
+  margin: 0 auto;
+  width: 280rpx;
+  position: relative;
+  height: 280rpx;
+  overflow: hidden;
+  margin-top: 50rpx;
+}
 .pic{
-  width: 164rpx;
-  height: 164rpx;
+  width: 212rpx;
+  height: 212rpx;
   border-radius: 50%;
   overflow: hidden;
   position: absolute;
@@ -37,16 +55,9 @@
   left: 50%;
   transform: translate(-50%,-50%);
 }
-.picBox{
-  margin: 0 auto;
-  width: 228rpx;
-  position: relative;
-  height: 228rpx;
-  overflow: hidden;
-}
 .picBg{
   width: 100%;
-  height: 228rpx;
+  height: 280rpx;
   position: relative;
 
 }
@@ -66,17 +77,24 @@
 }
 .userName{
   text-align: center;
-  font-size: 36rpx;
-  color: #c00000;
+  font-size: 40rpx;
+  color: #3131FB;
   font-weight: bold;
+  margin-top: 8rpx;
+}
+.well{
+  width: 100%;
+  height: 266rpx;
+  background: rgb(207, 228, 24);
+  margin-top: 38rpx;
 }
 .benediction{
   font-size: 36rpx;
-  color: #FDFF09;
+  color: #fff;
   line-height: 76rpx;
   padding: 0 26rpx;
-  background: #C00000;
-  margin: 30rpx auto 0;
+  background: #0079C0;
+  margin: 50rpx auto 0;
   display: inline-block;
 }
 .flowerBox{
@@ -215,4 +233,14 @@
 }
 .rewardA{
   animation: rewardA 2s cubic-bezier(0.2,0,0,1) infinite;
+}
+
+.bonText{
+  font-size: 40rpx;
+  color: #3131FB;
+  text-align: center;
+  font-weight: bold;
+}
+.bonTextTop{
+  margin-top: 30rpx;
 }
