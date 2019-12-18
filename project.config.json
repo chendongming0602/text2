@@ -53,7 +53,7 @@
 					"id": 1,
 					"name": "详情",
 					"pathName": "pages/details/details",
-					"query": "",
+					"query": "id=169",
 					"scene": null
 				}
 			]

@@ -3,7 +3,7 @@ App({
   config:{
     apiHost:"https://article.silver.yazai.com",
   },
-  adShow:true,
+  adShow:false,
   request({ path = '/', method, data }) {
     return new Promise((resolve, reject) => {
       wx.request({

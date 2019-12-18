@@ -18,7 +18,7 @@
 </view> -->
 
 <view class="list">
-  <block wx:for="{{8}}" wx:key="{{index}}">
+  <block wx:for="{{list}}" wx:key="{{index}}">
     <!-- 最新的标题 -->
     <view wx:if="{{listClass===0}}">
       <view class="listTitle"  wx:if="{{index==0}}">
@@ -41,16 +41,16 @@
       </view>
     </view>
     <!-- 列表 -->
-    <view class="listItem" style="background:url('https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/text2/index/listBg.png') no-repeat center/cover">
+    <navigator  url="/pages/details/details?id={{item.id}}" hover-class="none" class="listItem" style="background:url('https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/text2/index/listBg.png') no-repeat center/cover">
 
       <view class="picBox">
-        <view class="pic" style="background:url('http://minis-resources-1252149780.cosgz.myqcloud.com/lovers_magpie%20/logo.jpg') no-repeat center/cover">
+        <view class="pic" style="background:url({{item.thumbnail}}) no-repeat center/cover">
         </view>
         <image class="picBg "  src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/text2/index/listPic2.png">
         </image>
       </view>
-      <view class="itemText">感恩节，感恩一路有你这个逗比</view>
-    </view>
+      <view class="itemText">{{item.post_title}}</view>
+    </navigator>
   </block>
   <view class="empty1" wx:if="{{isEmpty&&!isEmptyList}}">
   暂无更多图文～

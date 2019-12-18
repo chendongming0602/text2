@@ -2,7 +2,7 @@
 const APP = getApp()
 // const WxParse = require('../../utils/wxParse/wxParse.js');//组件解析（卡）
 import {rich} from '../../utils/rich.js';//解析富文本
-const music = wx.createInnerAudioContext();//背景音乐
+
 Page({
 
   /**
@@ -24,9 +24,9 @@ Page({
       isMusic: !this.data.isMusic
     }, () => {
       if (this.data.isMusic) {
-        music.play();
+        this.music.play();
       } else {
-        music.stop();
+        this.music.pause();
       }
     })
   },
@@ -75,36 +75,31 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.id=31;
+    this.music = wx.createInnerAudioContext();//背景音乐
+    this.music.autoplay = true;//自动播放
+    this.music.loop = true;//循环播放
+    console.log(options)
+    this.id=options.id;
     APP.loadShow()
     Promise.all([this.detailList(),this.recommend()])
     .then(res=>{
+      wx.hideLoading()
       try{
-        console.log(res[0].more.audio)
-        if (!res[0].more.audio){
-          APP.hintShow("背景音乐播放失败！");
+        if (!res[0].more.audio) {
+          // APP.hintShow("背景音乐播放失败！");
           this.setData({ isMusic: false });
           this._isMusic = true;
-          return
         }
-        music.onError((e) => {
-          APP.hintShow("背景音乐播放失败！");
+        this.music.onError((e) => {
+          // APP.hintShow("背景音乐播放失败！");
           this.setData({ isMusic: false });
           this._isMusic = true;
         });
-        if (this._isMusic) return
-        music.src = res[0].more.audio;
-        music.title = "背景音乐"
-        music.play();
-        music.onPause(() => {
-          music.play();
-        });
-        // music.onPause(()=>{
-        //   console.log("暂停")
-        // })
-       
+        if (this._isMusic) return this.music.stop();
+        this.music.src = res[0].more.audio;
+        this.music.title = "背景音乐"
       }catch(err){
-        APP.hintShow("背景音乐播放失败！");
+        APP.hintShow("背景音乐播放失败！2");
         this.setData({isMusic:false});
         this._isMusic=true
       }
@@ -136,7 +131,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    music.play();
+    this.music.play();
   },
 
   /**
@@ -150,7 +145,9 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-    music.stop();
+    this.music.stop();
+    this.music.pause()
+    this.music.destroy();
   },
 
   /**
