@@ -1,0 +1,13 @@
+{
+  "pages": [
+    "mario_article/pages/index/index",
+    "mario_article/pages/details/details"
+  ],
+  "window": {
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "亲友点开",
+    "navigationBarBackgroundColor": "#000",
+    "backgroundColor": "#f5f5f5"
+  },
+  "sitemapLocation": "sitemap.json"
+}

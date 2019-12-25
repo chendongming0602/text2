@@ -1,0 +1,258 @@
+/* @import "/utils/wxParse/wxParse.wxss"; */
+view{
+  box-sizing: border-box;
+}
+.detailsBox{
+  /* background-size: 100% 100%; */
+  width: 100vw;
+  min-height: 100vh;
+  padding: 30rpx;
+  padding-bottom: 230rpx;
+  position: relative;
+}
+.advertising{
+  width: 100%;
+  height: 240rpx;
+  background: rgb(214, 214, 91);
+}
+.music{
+  width: 68rpx;
+  height: 68rpx;
+  position: fixed;
+  top: 300rpx;
+  right: 30rpx;
+  transition: top .5s;
+}
+.music2{
+  top: 50rpx;
+}
+.topText{
+  width: 100%;
+  font-size: 48rpx;
+  font-weight: bold;
+  color: #0000FF;
+  padding-bottom: 18rpx;
+  border-bottom: 2rpx solid #9B9B9B;
+  text-align: left;
+}
+.detailTop{
+  margin-top: 20rpx;
+  text-align: center;
+}
+
+.picBox{
+  margin: 0 auto;
+  width: 280rpx;
+  position: relative;
+  height: 280rpx;
+  overflow: hidden;
+  margin-top: 50rpx;
+}
+.pic{
+  width: 212rpx;
+  height: 212rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+.picBg{
+  width: 100%;
+  height: 280rpx;
+  position: relative;
+
+}
+@keyframes picBgA{
+  0%{
+    transform: rotate(0);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}
+.picBgA{
+  animation: picBgA 10s linear infinite;
+}
+.musicA{
+  animation: picBgA 3s linear infinite;
+}
+.userName{
+  text-align: center;
+  font-size: 40rpx;
+  color: #3131FB;
+  font-weight: bold;
+  margin-top: 8rpx;
+}
+.well{
+  width: 100%;
+  height: 266rpx;
+  background: rgb(207, 228, 24);
+  margin-top: 38rpx;
+}
+.benediction{
+  font-size: 36rpx;
+  color: #fff;
+  line-height: 76rpx;
+  padding: 0 26rpx;
+  background: #0079C0;
+  margin: 50rpx auto 0;
+  display: inline-block;
+}
+.flowerBox{
+  width: 100%;
+  padding: 100rpx 0;
+}
+.flower{
+  width: 100%;
+  height: 48rpx;
+}
+.goIndex{
+  width:324rpx;
+  background:rgba(7,151,73,1);
+  border-radius:4rpx;
+  margin: 60rpx auto 0;
+  line-height: 80rpx;
+  text-align: center;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40rpx;
+}
+.homePic{
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 15rpx;
+}
+.flock{
+  position: fixed;
+  right: 32rpx;
+  bottom: 200rpx;
+  background: #02AA0B;
+  box-shadow:0rpx 4rpx 8rpx 0px rgba(0,0,0,0.18);
+  border:4rpx solid rgba(255,129,44,1);
+  border-radius: 50%;
+  max-width: 112rpx;
+  max-height: 112rpx
+}
+.flock button{
+  margin: 0;
+  padding: 0;
+  max-width: 112rpx;
+  max-height: 112rpx;
+  min-width: 112rpx;
+  min-height: 112rpx;
+  font-size: 48rpx;
+  text-align: center;
+  color: #fff;
+  font-weight: normal;
+  line-height: 100rpx;
+  padding-right: 6rpx;
+  background: transparent;
+}
+
+.shareBtn{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  bottom: 80rpx;
+  width: 100%;
+  padding:0 30rpx;
+  left: 0;
+}
+.shareBtn view{
+  width:318rpx;
+  line-height:82rpx;
+  box-shadow:0px 4rpx 8rpx 0px rgba(0,0,0,0.18);
+  border-radius:6rpx;
+  text-align: center;
+}
+.shareBtn .shareRed button{
+  background: #E80708;
+}
+.shareBtn button{
+  min-height: 82rpx;
+  min-width: 318rpx;
+  max-height: 82rpx;
+  max-width: 318rpx;
+  margin: 0;
+  padding: 0;
+  font-size: 36rpx;
+  font-weight: bold;
+  line-height: 80rpx;
+  color: #fff;
+  background: rgba(2,170,13,1);
+}
+.zhengwen view{
+  overflow: hidden;
+}
+
+.load{
+  text-align: center;
+  font-size: 36rpx;
+  padding-top: 100rpx;
+  color: #666;
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #fff;
+  height: 100vh;
+  width: 100%;
+}
+@keyframes gopenA{
+  0%{
+    transform: scale(1);
+  }
+  25%{
+    transform: scale(0.9);
+  }
+  50%{
+    transform: scale(0.95);
+  }
+  75%{
+    transform: scale(0.9);
+  }
+  100%{
+    transform: scale(1);
+  }
+}
+.gopenA{
+  animation: gopenA 1.5s linear infinite;
+}
+
+@keyframes rewardA{
+ 0%{
+   transform: translateY(0px);
+ }
+ 30%{
+    transform: translateY(-25px);
+ }
+ 40%{
+   transform: translateY(0px);
+ }
+ 60%{
+   transform: translateY(-10px);
+ }
+  70%{
+      transform: translateY(0px);
+  }
+}
+.rewardA{
+  animation: rewardA 2s cubic-bezier(0.2,0,0,1) infinite;
+}
+
+.bonText{
+  font-size: 40rpx;
+  color: #3131FB;
+  text-align: center;
+  font-weight: bold;
+}
+.bonTextTop{
+  margin-top: 30rpx;
+}
