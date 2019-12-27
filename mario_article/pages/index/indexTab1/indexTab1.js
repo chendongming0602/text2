@@ -39,6 +39,7 @@ Component({
         "ArticleList",
         { page:this.page}
       ).then(res => {
+        console.log(res)
         if(res.lists.length===0){
           return this.setData({ isEmptyList: false })
         }

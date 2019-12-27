@@ -4,7 +4,7 @@ var siteinfo = {
   "acid": "2",
   "multiid": "0",
   "version": "1.1",
-  "siteroot": "https://tw.tbbug.com/app/index.php",
+  "siteroot": "https://wengine.tuixiu100.com/app/index.php",
   'method_design': '2'
 };
 module.exports = siteinfo;    

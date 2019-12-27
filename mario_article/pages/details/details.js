@@ -19,7 +19,7 @@ Page({
   },
 
   musicImg() {//背景音乐的按钮
-    if (this._isMusic) return APP.hintShow("背景音乐播放失败！")
+    if (this._isMusic) return ;
     this.setData({
       isMusic: !this.data.isMusic
     }, () => {

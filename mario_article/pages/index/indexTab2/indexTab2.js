@@ -43,7 +43,7 @@ Component({
         }
       ).then(res => {
         console.log(res)
-        if (res.lists.length < 10) {
+        if (res.lists.length === 0) {
           this.setData({ isEmptyList: false })
         }
         this.setData({
