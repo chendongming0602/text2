@@ -1,6 +1,6 @@
 //app.js
 import util from 'we7/resource/js/util.js';
-
+// var siteInfo = require('siteinfo.js');
 function request(action, method, data) {//封装的请求
   if (!data) {
     data = {};
@@ -30,8 +30,26 @@ function request(action, method, data) {//封装的请求
 }
 
 App({
+  isCallback:false,
+  isGG:false,
+  // siteInfo,
   onLaunch: function () {
+    // Promise.all([this.call()]).then(res=>{
+      //this.isCallback=true
+    //   if(this.callbackEvent){
+    //     this.callbackEvent();
+    //   }
+    // }).catch(err=>{
+
+    // })
     //调用API从本地缓存中获取数据
+  },
+  call(){
+    return this.get("GetSetting").then(res=>{
+      console.log(res)
+    }).catch(err=>{
+      console.log(err)
+    })
   },
   onShow: function () {
   },
@@ -44,7 +62,7 @@ App({
   globalData: {
     userInfo: null,
   },
-  siteInfo: require('siteinfo.js'),
+  
   loadShow(text = "加载中...") {
     wx.showLoading({
       title: text,

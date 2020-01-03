@@ -1,7 +1,7 @@
 import { base64_encode, base64_decode } from 'base64';
 import md5 from 'md5';
 var util = {};
-
+var siteInfo = require('../../../siteinfo.js');
 util.base64Encode = function (str) {
 	return base64_encode(str)
 };
@@ -21,7 +21,7 @@ util.md5 = function (str) {
 */
 util.url = function (action, querystring) {
 	var app = getApp();
-	var url = app.siteInfo.siteroot + '?i=' + app.siteInfo.uniacid + '&t=' + app.siteInfo.multiid + '&v=' + app.siteInfo.version + '&from=wxapp&';
+	var url = siteInfo.siteroot + '?i=' + siteInfo.uniacid + '&t=' + siteInfo.multiid + '&v=' + siteInfo.version + '&from=wxapp&';
 
 	if (action) {
 		action = action.split('/');
@@ -113,7 +113,7 @@ function getSign(url, data, token) {
 				}
 			}
 		}
-		token = token ? token : getApp().siteInfo.token;
+		token = token ? token : siteInfo.token;
 		sign = md5(urlData + token);
 		return sign;
 	}

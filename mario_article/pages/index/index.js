@@ -20,9 +20,8 @@ Page({
   onLoad: function () {
     this.setData({
       [`tabIf[${this.data.tabCount}]`]: true
-    })
+    });
   },
-
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -70,9 +69,9 @@ Page({
    */
   onShareAppMessage: function () {
     return {
-      title: "蜜囍美文",
-      imageUrl: "https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/text/new/top.png",
-      path: '/pages/index/index'
+      title: "每天打开送给亲友们最美的祝福！",
+      imageUrl: "",
+      path: '/mario_article/pages/index/index'
     };
   }
 })

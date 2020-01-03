@@ -19,7 +19,7 @@
     <view class="userName">
       亲爱的“<open-data type="userNickName" class="profileName"></open-data>”
     </view>
-    <view class="well">上午好</view>
+    <view class="well" wx:if="{{isGG}}">上午好</view>
     <view class="benediction">{{list.post_title}}</view>
     <!-- <view class="benediction">{{list.post_title}}</view>
     <view class="benediction">{{list.post_title}}</view> -->

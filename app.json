@@ -4,9 +4,9 @@
     "mario_article/pages/details/details"
   ],
   "window": {
-    "navigationBarTextStyle": "white",
-    "navigationBarTitleText": "亲友点开",
-    "navigationBarBackgroundColor": "#000",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "最美祝福",
+    "navigationBarBackgroundColor": "#fff",
     "backgroundColor": "#f5f5f5"
   },
   "sitemapLocation": "sitemap.json"

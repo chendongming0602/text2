@@ -15,7 +15,8 @@ Page({
     list: {},
     listArr: [],//推荐列表
     adShow: APP.adShow,//广告位显示
-    content: ""
+    content: "",
+    isGG:APP.isGG,
   },
 
   musicImg() {//背景音乐的按钮
@@ -37,7 +38,7 @@ Page({
         id: this.id
       }
     ).then(res => {
-      console.log(res)
+      // console.log(res)
       let text = res.content;
       // WxParse.wxParse("textHtml", 'html', text, this);
       setTimeout(() => {//延时给富文本渲染
@@ -77,9 +78,9 @@ Page({
     this.music = wx.createInnerAudioContext();//背景音乐
     this.music.autoplay = true;//自动播放
     this.music.loop = true;//循环播放
-    console.log(options)
+    // console.log(options)
     this.id = options.id;
-    APP.loadShow()
+    // APP.loadShow()
     Promise.all([this.detailList()])
       .then(res => {
         wx.hideLoading();
@@ -98,11 +99,12 @@ Page({
           this.music.src = res[0].background_music;
           this.music.title = "背景音乐"
         } catch (err) {
+          console.log(err,2222)
           // APP.hintShow("背景音乐播放失败！2");
           this.setData({ isMusic: false });
           this._isMusic = true
         }
-        wx.hideLoading()
+        wx.hideLoading();
       }).catch(() => {
         APP.hintShow("数据加载失败！！")
       })
@@ -170,18 +172,18 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function (res) {
-    let data = this.data.list
+    let datas = this.data.list;
     if (!res.target) {//正常分享
       return {
-        title: data.title,
-        imageUrl: data.cover,
-        path: '/pages/details/details?id=' + data.id
+        title: datas.title,
+        imageUrl: datas.cover,
+        path: '/mario_article/pages/details/details?id=' + datas.id
       };
     } else {//广场消息分享
       return {
-        imageUrl: data.cover,
-        title: data.post_title,
-        path: '/pages/details/details?id=' + data.id
+        imageUrl: datas.cover,
+        title: datas.title,
+        path: '/mario_article/pages/details/details?id=' + datas.id
       };
     }
   }
