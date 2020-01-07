@@ -39,14 +39,26 @@ Component({
         "ArticleList",
         { page:this.page}
       ).then(res => {
-        console.log(res)
+        // console.log(res)
         if(res.lists.length===0){
           return this.setData({ isEmptyList: false })
         }
         let list=[];
+        // let ress={...res};
+        // for(let t in ress){
+        //   let time = ress['date_ymd'].replace(/[年月日]/g,"/");
+        //   time = new Date(time).getTime();
+        //   let today = new Date().getTime();
+        //   if (time>today){
+        //     ress.isShow=false
+        //   }else{
+        //     ress.isShow=true
+        //   }
+        // }
+        // console.log(ress)
         list.push(res)
         this.setData({
-          list: !this.more ? list: this.data.list.concat(res)
+          list: !this.more ? list : this.data.list.concat(res)
         });
       });
   },
