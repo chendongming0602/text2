@@ -56,6 +56,25 @@ Page({
       this.setData({
         list: obj
       });
+      try {
+        // if (!!datas.info.nickName) {
+        //   APP.aldstat.sendEvent('进入详情页面', {
+        //     "用户名字": datas.info.nickName,
+        //     "用户头像": datas.info.avatarUrl,
+        //     "文章标题": datas.list.post_title,
+        //     "文章ID": datas.list.id
+        //   });
+        // } else {
+          APP.aldstat.sendEvent('进入详情页面', {
+            "用户名字": "用户未授权",
+            "用户头像": "用户未授权",
+            "文章标题": obj.title,
+            "文章ID": obj.id
+          });
+        // }
+      } catch (err) {
+        console.log("阿里丁记录文章标题失败", err)
+      }
       return res
     });
   },

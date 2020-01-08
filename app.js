@@ -1,6 +1,7 @@
 //app.js
 import util from 'we7/resource/js/util.js';
 // var siteInfo = require('siteinfo.js');
+const ald = require('./utils/ald-stat.js');
 function request(action, method, data) {//封装的请求
   if (!data) {
     data = {};
