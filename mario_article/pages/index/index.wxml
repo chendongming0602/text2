@@ -8,3 +8,4 @@
 
 
 <tab tabCount="{{tabCount}}" bind:tabIdex="tabIdex"></tab>
+<login bind:loginEvent="loginEvent" wx:if="{{!isLogin&&!is_check}}"></login>

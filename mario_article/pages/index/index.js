@@ -4,7 +4,9 @@ const APP = getApp()
 Page({
   data: {
     tabCount: 0,//选择的tab
-    tabIf: [false, false]
+    tabIf: [false, false],
+    isLogin:true,//判断是否未授权（true==授权）
+    is_check:false
   },
   tabIdex(e) {//tab事件
     this.setData({
@@ -16,11 +18,26 @@ Page({
   frameEvent() {//打开收藏提示框
     this.selectComponent('#frame').showEvent()
   },
-
+  loginEvent(){
+    this.setData({isLogin:true})
+  },
   onLoad: function () {
     this.setData({
       [`tabIf[${this.data.tabCount}]`]: true
     });
+    if (APP.isCallback) {
+      this.allS();
+    } else {
+      APP.callbackEvent= res => {
+        this.allS();
+      };
+    };
+  },
+  allS(){
+    this.setData({
+      isLogin: APP.userInfo.isPower,
+      is_check: APP.checkings.is_check
+    })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -68,10 +85,11 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
+    let share = APP.checkings
     return {
-      title: "每天打开送给亲友们最美的祝福！",
-      imageUrl: "",
-      path: '/mario_article/pages/index/index'
+      title: share.sharetitle,
+      imageUrl: share.shareimg,
+      path: share.path
     };
   }
 })

@@ -290,7 +290,8 @@ util.getUserInfo = function (cb) {
 					cachetime: 0,
 					success: function (session) {
 						if (!session.data.errno) {
-							userInfo.sessionid = session.data.data.sessionid
+							userInfo.sessionid = session.data.data.sessionid,
+              userInfo.openid = session.data.data.openid;
 							wx.setStorageSync('userInfo', userInfo);
 							wx.getUserInfo({
 								success: function (wxInfo) {
@@ -302,7 +303,7 @@ util.getUserInfo = function (cb) {
 											signature: wxInfo.signature,
 											rawData: wxInfo.rawData,
 											iv: wxInfo.iv,
-											encryptedData: wxInfo.encryptedData
+											encryptedData: wxInfo.encryptedData,
 										},
 										method: 'POST',
 										header: {

@@ -3,7 +3,7 @@ var siteinfo = {
   "uniacid": "2",
   "acid": "2",
   "multiid": "0",
-  "version": "1.1",
+  "version": "v1.0.3",
   "siteroot": "https://wengine.tuixiu100.com/app/index.php",
   'method_design': '2'
 };
