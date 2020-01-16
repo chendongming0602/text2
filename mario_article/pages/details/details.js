@@ -56,22 +56,24 @@ Page({
       this.setData({
         list: obj
       });
+      
       try {
-        // if (!!datas.info.nickName) {
-        //   APP.aldstat.sendEvent('进入详情页面', {
-        //     "用户名字": datas.info.nickName,
-        //     "用户头像": datas.info.avatarUrl,
-        //     "文章标题": datas.list.post_title,
-        //     "文章ID": datas.list.id
-        //   });
-        // } else {
+        if (!!APP.userInfo.isPower) {
+          // console.log(APP.userInfo)
+          APP.aldstat.sendEvent('进入详情页面', {
+            "用户名字": APP.userInfo.wxInfo.nickName,
+            "用户头像": APP.userInfo.wxInfo.avatarUrl,
+            "文章标题": obj.title,
+            "文章ID": obj.id
+          });
+        } else {
           APP.aldstat.sendEvent('进入详情页面', {
             "用户名字": "用户未授权",
             "用户头像": "用户未授权",
             "文章标题": obj.title,
             "文章ID": obj.id
           });
-        // }
+        }
       } catch (err) {
         console.log("阿里丁记录文章标题失败", err)
       }
@@ -99,7 +101,16 @@ Page({
     this.music.loop = true;//循环播放
     // console.log(options)
     this.id = options.id;
+    if (APP.isCallback) {
+      this.allS();
+    } else {
+      APP.callbackEvent = res => {
+        this.allS();
+      };
+    };
     // APP.loadShow()
+  },
+  allS(){
     Promise.all([this.detailList()])
       .then(res => {
         wx.hideLoading();
@@ -118,7 +129,7 @@ Page({
           this.music.src = res[0].background_music;
           this.music.title = "背景音乐"
         } catch (err) {
-          console.log(err,2222)
+          console.log(err, 2222)
           // APP.hintShow("背景音乐播放失败！2");
           this.setData({ isMusic: false });
           this._isMusic = true
@@ -127,9 +138,7 @@ Page({
       }).catch(() => {
         APP.hintShow("数据加载失败！！")
       })
-
   },
-
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
