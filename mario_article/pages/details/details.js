@@ -56,7 +56,6 @@ Page({
       this.setData({
         list: obj
       });
-      
       try {
         if (!!APP.userInfo.isPower) {
           // console.log(APP.userInfo)
@@ -201,18 +200,12 @@ Page({
    */
   onShareAppMessage: function (res) {
     let datas = this.data.list;
-    if (!res.target) {//正常分享
+    // if (!res.target) {//正常分享
       return {
-        title: datas.title,
-        imageUrl: datas.cover,
+        title: datas.share_title ? datas.share_title:datas.title,
+        imageUrl: datas.share_img ? datas.share_img:datas.cover,
         path: '/mario_article/pages/details/details?id=' + datas.id
       };
-    } else {//广场消息分享
-      return {
-        imageUrl: datas.cover,
-        title: datas.title,
-        path: '/mario_article/pages/details/details?id=' + datas.id
-      };
-    }
+    // } 
   }
 })
