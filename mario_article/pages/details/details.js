@@ -2,7 +2,7 @@
 const APP = getApp()
 // const WxParse = require('../../utils/wxParse/wxParse.js');//组件解析（卡）
 import { rich } from '../../../utils/rich.js';//解析富文本
-
+import {ads} from "../../../utils/ads.js";
 Page({
 
   /**
@@ -17,6 +17,7 @@ Page({
     adShow: APP.adShow,//广告位显示
     content: "",
     isGG:APP.isGG,
+    ads
   },
 
   musicImg() {//背景音乐的按钮

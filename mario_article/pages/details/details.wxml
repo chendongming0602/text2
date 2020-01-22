@@ -19,8 +19,11 @@
     <view class="userName">
       亲爱的“<open-data type="userNickName" class="profileName"></open-data>”
     </view>
-    <view class="well" wx:if="{{isGG}}">上午好</view>
-    <view class="benediction">{{list.post_title}}</view>
+    <!-- 广告 -->
+    <view class="well" wx:if="{{isGG}}">
+      <ad unit-id="{{ads.des1}}"></ad>
+    </view>
+    <!-- <view class="benediction">{{list.post_title}}</view> -->
     <!-- <view class="benediction">{{list.post_title}}</view>
     <view class="benediction">{{list.post_title}}</view> -->
     <view class="flowerBox">
@@ -34,7 +37,10 @@
   </view> -->
   <!-- 自己 -->
   <rich-text nodes="{{content}}" space="nbsp"></rich-text>
-
+  <!-- 广告 -->
+  <view class="well well2" wx:if="{{isGG}}">
+    <ad unit-id="{{ads.des2}}"></ad>
+  </view>
   <view class="picBox">
     <view class="pic">
       <open-data type="userAvatarUrl"></open-data>

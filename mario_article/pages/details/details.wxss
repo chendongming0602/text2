@@ -87,9 +87,10 @@ view{
 }
 .well{
   width: 100%;
-  height: 266rpx;
-  background: rgb(207, 228, 24);
-  margin-top: 38rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30rpx;
 }
 .benediction{
   font-size: 36rpx;
@@ -102,7 +103,7 @@ view{
 }
 .flowerBox{
   width: 100%;
-  padding: 100rpx 0;
+  padding: 50rpx 0 100rpx;
 }
 .flower{
   width: 100%;
@@ -255,4 +256,7 @@ view{
 }
 .bonTextTop{
   margin-top: 30rpx;
+}
+.well2{
+  margin-top: 60rpx;
 }

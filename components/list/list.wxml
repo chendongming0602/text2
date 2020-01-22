@@ -41,16 +41,23 @@
       </view>
     </view>
     <!-- 列表 (最新)-->
-    <navigator wx:if="{{listClass==0}}" wx:for="{{item.lists}}" url="/mario_article/pages/details/details?id={{item.id}}" hover-class="none" class="listItem" style="background:url('https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/text2/index/listBg.png') no-repeat center/cover">
+    <block wx:if="{{listClass==0}}" wx:for="{{item.lists}}" wx:key="{{index}}">
+      <navigator  url="/mario_article/pages/details/details?id={{item.id}}" hover-class="none" class="listItem" style="background:url('https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/text2/index/listBg.png') no-repeat center/cover">
 
-      <view class="picBox">
-        <view class="pic" style="background:url({{item.cover}}) no-repeat center/cover">
+        <view class="picBox">
+          <view class="pic" style="background:url({{item.cover}}) no-repeat center/cover">
+          </view>
+          <image class="picBg "  src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/text2/index/listPic2.png">
+          </image>
         </view>
-        <image class="picBg "  src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/text2/index/listPic2.png">
-        </image>
+        <view class="itemText">{{item.title}}</view>
+      </navigator>
+      <!-- 广告位 -->
+      <view class="new1" wx:if="{{index===1&&isGG}}">
+        <ad unit-id="{{ads.new1}}"></ad>
       </view>
-      <view class="itemText">{{item.title}}</view>
-    </navigator>
+    </block>
+    
 
     <!-- 列表（热门） -->
     <navigator wx:if="{{listClass==1}}" url="/mario_article/pages/details/details?id={{item.id}}" hover-class="none" class="listItem" style="background:url('https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/text2/index/listBg.png') no-repeat center/cover">
@@ -63,6 +70,10 @@
       </view>
       <view class="itemText">{{item.title}}</view>
     </navigator>
+    <!-- 广告位 -->
+    <view class="new1" wx:if="{{index===1&&listClass==1&isGG}}">
+      <ad unit-id="{{ads.hot1}}"></ad>
+    </view>
   </block>
   <view class="empty1" wx:if="{{isEmpty&&!isEmptyList}}">
   暂无更多图文～

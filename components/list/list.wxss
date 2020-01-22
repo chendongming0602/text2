@@ -149,3 +149,11 @@
   padding-top: 36rpx;
   margin-left: 10rpx;
 }
+
+.new1{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40rpx;
+  width: 100%;
+}

@@ -40,7 +40,7 @@ function request(action, method, data) {//封装的请求
 
 App({
   isCallback:false,
-  isGG:false,
+  isGG:true,
   userInfo:{
     isPower:false
   },

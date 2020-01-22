@@ -62,6 +62,23 @@ Component({
         });
       });
   },
+    dot() {
+      wx.navigateToMiniProgram({
+        appId: 'wx1a15fc0525cd4706',
+        path: 'pages/index/index',
+        extraData: {
+          foo: 'bar'
+        },
+        envVersion: 'release',
+        success(res) {
+          console.log("跳转成功")
+          // 打开成功
+        },
+        fail: err => {
+          console.log("跳转失败", err)
+        }
+      })
+    },
   newList(){//最新
     return APP.get(
       "ArticleList",

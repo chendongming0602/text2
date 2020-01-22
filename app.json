@@ -9,5 +9,8 @@
     "navigationBarBackgroundColor": "#fff",
     "backgroundColor": "#f5f5f5"
   },
-  "sitemapLocation": "sitemap.json"
+  "sitemapLocation": "sitemap.json",
+  "navigateToMiniProgramAppIdList": [
+    "wx1a15fc0525cd4706"
+  ]
 }

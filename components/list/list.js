@@ -1,5 +1,6 @@
 // components/list/list.js
 const APP=getApp();
+import {ads} from "../../utils/ads.js";
 Component({
   /**
    * 组件的属性列表
@@ -25,7 +26,8 @@ Component({
    * 组件的初始数据
    */
   data: {
-
+    ads,
+    isGG:APP.isGG
   },
 
   /**

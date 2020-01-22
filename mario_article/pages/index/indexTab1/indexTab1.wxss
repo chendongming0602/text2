@@ -114,3 +114,13 @@
   font-weight: bold;
   margin: 0 15rpx;
 }
+
+.other{
+  width: 100%;
+  height: 350rpx;
+  padding: 60rpx 0 20rpx;
+}
+.other image{
+  width: 100%;
+  height: 100%;
+}

@@ -24,6 +24,9 @@
         </image>
       </view>
     </view>
+     <view class="other" catchtap="dot">
+        <image src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/text/new/%E7%9B%B8%E5%86%8C%E5%8A%A8%E5%9B%BE.gif" ></image>
+    </view>
     <!-- 最新内容 -->
     <!-- <listBox name="最新内容" list="{{newList}}"></listBox> -->
     <!-- 更多内容 -->
